@@ -1,0 +1,25 @@
+{
+    "name": "miw/padel_php_2015",
+    "description": "Tarea Padel PHP MiW 2015",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "FJavierGil",
+            "email": "FranciscoJavier.Gil@upm.es"
+        },
+        {
+            "name": "Alumno MiW",
+            "email": "EMail_Alumno@alumnos.upm.es"
+        }    ],
+  "autoload": {
+    "psr-4": {
+      "AppBundle\\Entity\\": "app/Entity",
+      "MiW\\Padel15\\Controller\\": "app/"
+      }
+  },
+    "require": {
+        "doctrine/orm": "^2.5",
+        "phpunit/phpunit": "^5.0"
+    }
+}
