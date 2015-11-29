@@ -1,12 +1,14 @@
-<?php   // app/Entity/Court.php
+<?php
+
+// app/Entity/Court.php
 
 namespace AppBundle\Entity;
 
 /**
  * Court
  */
-class Court
-{
+class Court {
+
     /**
      * @var integer
      */
@@ -16,23 +18,21 @@ class Court
      * @var boolean
      */
     private $active;
-    
+
     /**
      * Constructor
      * @param boolean $active
      */
-    public function __construct($active=true)
-    {
+    public function __construct($active = true) {
         $this->active = $active;
     }
-    
+
     /**
      * Get id
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -43,8 +43,7 @@ class Court
      *
      * @return Court
      */
-    public function setActive($active)
-    {
+    public function setActive($active) {
         $this->active = $active;
 
         return $this;
@@ -55,9 +54,18 @@ class Court
      *
      * @return boolean
      */
-    public function getActive()
-    {
+    public function getActive() {
         return $this->active;
     }
-}
 
+    /**
+     * To string
+     *
+     * @return string
+     */
+    public function __toString() {
+        return $this->id . "-" .
+                ($this->getActive() ? 'active' : 'not active');
+    }
+
+}
