@@ -29,7 +29,7 @@ AppBundle\Entity\Group:
                 fixed: false
     manyToMany:
         user:
-            targetEntity: Users
+            targetEntity: User
             cascade: {  }
             fetch: LAZY
             mappedBy: group

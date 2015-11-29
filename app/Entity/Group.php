@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 /**
  * Group
  */
-class Group
-{
+class Group {
+
     /**
      * @var integer
      */
@@ -29,10 +29,15 @@ class Group
 
     /**
      * Constructor
+     *
+     * @param string $name
+     * @param array $roles
      */
-    public function __construct()
-    {
+    public function __construct($name = null, $roles = array()) {
+        $this->name = $name;
+        $this->roles = $roles;
         $this->user = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->user->add($user);
     }
 
     /**
@@ -40,8 +45,7 @@ class Group
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -52,10 +56,8 @@ class Group
      *
      * @return Group
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
-
         return $this;
     }
 
@@ -64,8 +66,7 @@ class Group
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -76,10 +77,8 @@ class Group
      *
      * @return Group
      */
-    public function setRoles($roles)
-    {
+    public function setRoles($roles) {
         $this->roles = $roles;
-
         return $this;
     }
 
@@ -88,32 +87,28 @@ class Group
      *
      * @return array
      */
-    public function getRoles()
-    {
+    public function getRoles() {
         return $this->roles;
     }
 
     /**
      * Add user
      *
-     * @param \AppBundle\Entity\Users $user
+     * @param \AppBundle\Entity\User $user
      *
      * @return Group
      */
-    public function addUser(\AppBundle\Entity\Users $user)
-    {
+    public function addUser(\AppBundle\Entity\User $user) {
         $this->user[] = $user;
-
         return $this;
     }
 
     /**
      * Remove user
      *
-     * @param \AppBundle\Entity\Users $user
+     * @param \AppBundle\Entity\User $user
      */
-    public function removeUser(\AppBundle\Entity\Users $user)
-    {
+    public function removeUser(\AppBundle\Entity\User $user) {
         $this->user->removeElement($user);
     }
 
@@ -122,9 +117,8 @@ class Group
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getUser()
-    {
+    public function getUser() {
         return $this->user;
     }
-}
 
+}
