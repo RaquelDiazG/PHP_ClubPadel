@@ -27,6 +27,38 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
+                <div class="portlet box red-flamingo">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>Crear nueva pista
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form" action="../../crud/createCourt.php" method="POST">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Disponible</label>
+                                    <div class="col-md-6">
+                                        <div class="checkbox-list">
+                                            <label class="checkbox-inline">
+                                                <div class="checker" id="uniform-disponible">
+                                                    <span><input type="checkbox" name="disponible" value="1"></span>
+                                                </div> Sí</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="submit" class="btn red-flamingo-stripe">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
 
                 <!-- BEGIN SAMPLE TABLE PORTLET-->
                 <div class="portlet box red-flamingo">
