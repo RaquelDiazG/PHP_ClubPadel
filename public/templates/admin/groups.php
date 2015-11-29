@@ -1,6 +1,8 @@
 
 <?php include("head.php"); ?>
 
+<?php require_once __DIR__ . '/../../../config/bootstrap.php'; ?>
+
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -47,20 +49,33 @@
                                         <th>
                                             Roles
                                         </th>
+                                        <th>
+                                            Users
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $entityManager = GetEntityManager();
+                                    $groupRepository = $entityManager->getRepository('AppBundle\Entity\Group');
+                                    $groups = $groupRepository->findAll();
+                                    foreach ($groups as $group) {
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $group->getId(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $group->getName(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo implode(", ", $group->getRoles()); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo implode(", ", $group->getUser()->getValues()); ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
