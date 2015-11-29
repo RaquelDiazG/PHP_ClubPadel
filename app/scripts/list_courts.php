@@ -1,17 +1,15 @@
-<?php // app/scripts/list_groups.php
+<?php
 
 require_once __DIR__ . '/../../config/bootstrap.php';
 
+//Get all courts
 $entityManager = GetEntityManager();
-
 $courtRepository = $entityManager->getRepository('AppBundle\Entity\Court');
 $courts = $courtRepository->findAll();
 
-$items = 0;
+//Print all courts
 echo sprintf("  %2s: %10s\n", 'Id', 'Active:');
 foreach ($courts as $court) {
     echo sprintf("- %2d: %10s\n", $court->getId(), ($court->getActive() ? 'true' : 'false'));
-    $items++;
 }
-
-echo "\nTotal: $items courts.\n\n";
+echo "\nTotal: " . count($courts) . " courts.\n\n";

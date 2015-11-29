@@ -20,12 +20,11 @@ $user->setEmail($argv[3]);
 $user->setEmailCanonical(strtolower($argv[3]));
 $user->setPassword($argv[4]);
 $user->setRoles(explode(" ", $argv[5]));
-
 //Get group (object)
 $groupsRepository = $entityManager->getRepository('AppBundle\Entity\Group');
 $group = $groupsRepository->find(intval($argv[6]));
 //Add user to group (many to many)
 $user->addGroup($group);
 
-//Update from BBDD
+//Update to BBDD
 $entityManager->flush();

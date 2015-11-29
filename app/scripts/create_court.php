@@ -1,13 +1,13 @@
-<?php   // app/scripts/create_court.php
+<?php
 
 require_once __DIR__ . '/../../config/bootstrap.php';
 
 use AppBundle\Entity\Court;
 
-// create Court
+//Create court
 $court = new Court(($argc > 1) ? $argv[1] : true);
 
-// add
-$em = GetEntityManager();
-$em->persist($court);
-$em->flush();
+//Add court to BBDD
+$entityManager = GetEntityManager();
+$entityManager->persist($court);
+$entityManager->flush();

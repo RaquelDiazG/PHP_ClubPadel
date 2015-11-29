@@ -24,5 +24,5 @@ $group->addUser($user);
 //Add group to user (many to many)
 $user->addGroup($group);
 
-//Update from BBDD
+//Update to BBDD
 $entityManager->flush();

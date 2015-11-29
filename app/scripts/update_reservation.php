@@ -15,7 +15,6 @@ $reservation = $reservationRepository->find(intval($argv[1]));
 
 //Update court (object)
 $reservation->setDatetime(new DateTime($argv[2]));
-
 //Get court (object)
 $courtsRepository = $entityManager->getRepository('AppBundle\Entity\Court');
 $court = $courtsRepository->find(($argv[3]));
@@ -27,5 +26,5 @@ $user = $usersRepository->find(intval($argv[4]));
 //Add user to reservation (many to one)
 $reservation->setUser($user);
 
-//Update from BBDD
+//Update to BBDD
 $entityManager->flush();
