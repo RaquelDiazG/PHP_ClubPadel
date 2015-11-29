@@ -9,17 +9,18 @@
             "email": "FranciscoJavier.Gil@upm.es"
         },
         {
-            "name": "Alumno MiW",
-            "email": "EMail_Alumno@alumnos.upm.es"
-        }    ],
-  "autoload": {
-    "psr-4": {
-      "AppBundle\\Entity\\": "app/Entity",
-      "MiW\\Padel15\\Controller\\": "app/"
-      }
-  },
+            "name": "Raquel Diaz Gonzalez",
+            "email": "raquel.diazgonz@alumnos.upm.es"
+        }],
+    "autoload": {
+        "psr-4": {
+            "AppBundle\\Entity\\": "app/Entity",
+            "MiW\\Padel15\\Controller\\": "app/"
+        }
+    },
     "require": {
         "doctrine/orm": "^2.5",
+        "symfony/yaml": "^2.7",
         "phpunit/phpunit": "^5.0"
     }
 }
