@@ -1,6 +1,8 @@
 
 <?php include("head.php"); ?>
 
+<?php require_once __DIR__ . '/../../../config/bootstrap.php'; ?>
+
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -47,14 +49,34 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
+                                    <?php
+                                    $entityManager = GetEntityManager();
+                                    $courtRepository = $entityManager->getRepository('AppBundle\Entity\Court');
+                                    $courts = $courtRepository->findAll();
+                                    foreach ($courts as $court) {
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $court->getId(); ?>
+                                            </td>
+                                            <td>
 
-                                        </td>
-                                        <td>
+                                                <div class="checker disabled">
+                                                    <span>
+                                                        <input type="checkbox" disabled
+                                                        <?php
+                                                        if ($court->getActive()) {
+                                                            echo 'checked';
+                                                        }
+                                                        ?>
+                                                               >
+                                                    </span>
+                                                </div>
 
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+
                                 </tbody>
                             </table>
                         </div>
