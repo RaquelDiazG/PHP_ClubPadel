@@ -1,6 +1,24 @@
 
 <?php include("head.php"); ?>
 
+<?php
+require_once __DIR__ . '/../../../config/bootstrap.php';
+
+$entityManager = GetEntityManager();
+//Courts
+$courtRepository = $entityManager->getRepository('AppBundle\Entity\Court');
+$numCourts = count($courtRepository->findAll());
+//Groups
+$groupRepository = $entityManager->getRepository('AppBundle\Entity\Group');
+$numGroups = count($groupRepository->findAll());
+//Reservations
+$reservationRepository = $entityManager->getRepository('AppBundle\Entity\Reservation');
+$numReservations = count($reservationRepository->findAll());
+//Users
+$userRepository = $entityManager->getRepository('AppBundle\Entity\User');
+$numUsers = count($userRepository->findAll());
+?>
+
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -27,11 +45,11 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <a class="dashboard-stat dashboard-stat-light blue-soft" href="javascript:;">
                     <div class="visual">
-                        <i class="fa fa-comments"></i>
+                        <i class="fa fa-list"></i>
                     </div>
                     <div class="details">
                         <div class="number">
-                            1349
+                            <?php echo $numCourts ?>
                         </div>
                         <div class="desc">
                             Courts
@@ -42,11 +60,11 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <a class="dashboard-stat dashboard-stat-light red-soft" href="javascript:;">
                     <div class="visual">
-                        <i class="fa fa-trophy"></i>
+                        <i class="fa fa-user"></i>
                     </div>
                     <div class="details">
                         <div class="number">
-                            12,5M$
+                            <?php echo $numUsers ?>
                         </div>
                         <div class="desc">
                             Users
@@ -57,11 +75,11 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <a class="dashboard-stat dashboard-stat-light green-soft" href="javascript:;">
                     <div class="visual">
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-users"></i>
                     </div>
                     <div class="details">
                         <div class="number">
-                            549
+                            <?php echo $numGroups ?>
                         </div>
                         <div class="desc">
                             Groups
@@ -72,11 +90,11 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <a class="dashboard-stat dashboard-stat-light purple-soft" href="javascript:;">
                     <div class="visual">
-                        <i class="fa fa-globe"></i>
+                        <i class="fa fa-calendar"></i>
                     </div>
                     <div class="details">
                         <div class="number">
-                            +89%
+                            <?php echo $numReservations ?>
                         </div>
                         <div class="desc">
                             Reservations
