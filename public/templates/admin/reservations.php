@@ -8,7 +8,7 @@
     <div class="page-content">
         <!-- BEGIN PAGE HEADER-->
         <h3 class="page-title">
-            Reservations
+            Reservas
         </h3>
         <!--        <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -32,7 +32,7 @@
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>All reservations
+                            <i class="fa fa-cogs"></i>Todas las reservas
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -44,13 +44,13 @@
                                             ID
                                         </th>
                                         <th>
-                                            Court
+                                            Pista
                                         </th>
                                         <th>
-                                            User
+                                            Usuario
                                         </th>
                                         <th>
-                                            Datetime
+                                            Fecha y hora
                                         </th>
 
                                     </tr>
@@ -67,13 +67,13 @@
                                                 <?php echo $reservation->getId(); ?>
                                             </td>
                                             <td>
-                                                <?php echo $reservation->getDatetime()->format('d-m-Y H:i:s'); ?>
-                                            </td>
-                                            <td>
                                                 <?php echo $reservation->getCourt(); ?>
                                             </td>
                                             <td>
                                                 <?php echo $reservation->getUser(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $reservation->getDatetime()->format('d-m-Y H:i:s'); ?>
                                             </td>
                                         </tr>
                                     <?php } ?>

@@ -24,7 +24,7 @@ $numUsers = count($userRepository->findAll());
     <div class="page-content">
         <!-- BEGIN PAGE HEADER-->
         <h3 class="page-title">
-            Home
+            Inicio
         </h3>
         <!--        <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -52,7 +52,7 @@ $numUsers = count($userRepository->findAll());
                             <?php echo $numCourts ?>
                         </div>
                         <div class="desc">
-                            Courts
+                            Pistas
                         </div>
                     </div>
                 </a>
@@ -67,7 +67,7 @@ $numUsers = count($userRepository->findAll());
                             <?php echo $numUsers ?>
                         </div>
                         <div class="desc">
-                            Users
+                            Usuarios
                         </div>
                     </div>
                 </a>
@@ -82,7 +82,7 @@ $numUsers = count($userRepository->findAll());
                             <?php echo $numGroups ?>
                         </div>
                         <div class="desc">
-                            Groups
+                            Grupos
                         </div>
                     </div>
                 </a>
@@ -97,7 +97,7 @@ $numUsers = count($userRepository->findAll());
                             <?php echo $numReservations ?>
                         </div>
                         <div class="desc">
-                            Reservations
+                            Reservas
                         </div>
                     </div>
                 </a>

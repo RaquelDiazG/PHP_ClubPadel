@@ -91,35 +91,35 @@
                             <li class="start active ">
                                 <a href="home.php">
                                     <i class="icon-home"></i>
-                                    <span class="title">Home</span>
+                                    <span class="title">Inicio</span>
                                     <span class="selected"></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="courts.php">
                                     <i class="icon-list"></i>
-                                    <span class="title">Courts</span>
+                                    <span class="title">Pistas</span>
                                     <span class="selected"></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="users.php">
                                     <i class="icon-user"></i>
-                                    <span class="title">Users</span>
+                                    <span class="title">Usuarios</span>
                                     <span class="selected"></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="groups.php">
                                     <i class="icon-users"></i>
-                                    <span class="title">Groups</span>
+                                    <span class="title">Grupos</span>
                                     <span class="selected"></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="reservations.php">
                                     <i class="icon-calendar"></i>
-                                    <span class="title">Reservations</span>
+                                    <span class="title">Reservas</span>
                                     <span class="selected"></span>
                                 </a>
                             </li>

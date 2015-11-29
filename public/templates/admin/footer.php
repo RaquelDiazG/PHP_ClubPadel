@@ -2,7 +2,7 @@
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
-    <div class="page-footer-inner">
+    <div class="page-footer-inner bold text-center">
         2015 © Práctica para la asignatura Desarrollo de Aplicaciones Web con Tecnologías de Libre Distribución del Máster en Ingeniería Web | Raquel Díaz González
     </div>
     <div class="scroll-to-top">

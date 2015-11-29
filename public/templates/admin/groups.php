@@ -8,7 +8,7 @@
     <div class="page-content">
         <!-- BEGIN PAGE HEADER-->
         <h3 class="page-title">
-            Groups
+            Grupos
         </h3>
         <!--        <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -32,7 +32,7 @@
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>All groups
+                            <i class="fa fa-cogs"></i>Todos los grupos
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -44,13 +44,13 @@
                                             ID
                                         </th>
                                         <th>
-                                            Name
+                                            Nombre
                                         </th>
                                         <th>
                                             Roles
                                         </th>
                                         <th>
-                                            Users
+                                            Usuarios
                                         </th>
                                     </tr>
                                 </thead>

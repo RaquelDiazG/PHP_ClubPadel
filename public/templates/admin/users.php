@@ -8,7 +8,7 @@
     <div class="page-content">
         <!-- BEGIN PAGE HEADER-->
         <h3 class="page-title">
-            Users
+            Usuarios
         </h3>
         <!--        <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -32,7 +32,7 @@
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>All users
+                            <i class="fa fa-cogs"></i>Todos los usuarios
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -44,16 +44,16 @@
                                             ID
                                         </th>
                                         <th>
-                                            Username
+                                            Usuario
                                         </th>
                                         <th>
-                                            Username canonical
+                                            Usuario canónico
                                         </th>
                                         <th>
                                             Email
                                         </th>
                                         <th>
-                                            Email canonical
+                                            Email canónico
                                         </th>
 <!--                                        <th>
                                             Enabled
@@ -62,7 +62,7 @@
                                             Salt
                                         </th>-->
                                         <th>
-                                            Password
+                                            Contraseña
                                         </th>
 <!--                                        <th>
                                             Last login
@@ -92,7 +92,7 @@
                                             Credentials expire at
                                         </th>-->
                                         <th>
-                                            Groups
+                                            Grupos
                                         </th>
                                     </tr>
                                 </thead>

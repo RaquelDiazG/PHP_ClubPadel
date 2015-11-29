@@ -8,7 +8,7 @@
     <div class="page-content">
         <!-- BEGIN PAGE HEADER-->
         <h3 class="page-title">
-            Courts
+            Pistas
         </h3>
         <!--        <div class="page-bar">
                     <ul class="page-breadcrumb">
@@ -32,7 +32,7 @@
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>All courts
+                            <i class="fa fa-cogs"></i>Todas las pistas
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -44,7 +44,7 @@
                                             ID
                                         </th>
                                         <th>
-                                            Active
+                                            Disponible
                                         </th>
                                     </tr>
                                 </thead>
