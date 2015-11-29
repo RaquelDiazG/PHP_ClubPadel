@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../../config/bootstrap.php';
+require_once __DIR__ . '/../../config/bootstrap.php';
 
 $id = $_POST['id'];
 //Get court (object)
@@ -11,5 +11,5 @@ $court = $courtRepository->find(intval($id));
 $entityManager->remove($court);
 $entityManager->flush();
 //Redirect
-header('Location: courts.php');
+header('Location: ../templates/admin/courts.php');
 
