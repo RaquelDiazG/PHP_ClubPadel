@@ -1,5 +1,3 @@
-</div>
-<!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
     <div class="page-footer-inner bold text-center">

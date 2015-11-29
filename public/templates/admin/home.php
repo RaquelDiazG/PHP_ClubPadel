@@ -1,5 +1,5 @@
 
-<?php include("head.php"); ?>
+<?php include("header.php"); ?>
 
 <?php
 require_once __DIR__ . '/../../../config/bootstrap.php';

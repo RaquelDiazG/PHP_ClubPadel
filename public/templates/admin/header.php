@@ -42,11 +42,11 @@
     <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
     <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
     <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-    <body class="page-boxed page-header-fixed page-sidebar-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed-hide-logo">
+    <body class="page-header-fixed page-sidebar-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed-hide-logo">
         <!-- BEGIN HEADER -->
         <div class="page-header navbar navbar-fixed-top">
             <!-- BEGIN HEADER INNER -->
-            <div class="page-header-inner container">
+            <div class="page-header-inner">
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
                     <a href="index.html">
@@ -73,60 +73,59 @@
         <div class="clearfix">
         </div>
         <!-- BEGIN CONTAINER -->
-        <div class="container">
-            <div class="page-container">
-                <!-- BEGIN SIDEBAR -->
-                <div class="page-sidebar-wrapper">
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <!-- BEGIN SIDEBAR MENU -->
+                    <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+                    <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+                    <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
                     <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-                    <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-                    <div class="page-sidebar navbar-collapse collapse">
-                        <!-- BEGIN SIDEBAR MENU -->
-                        <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
-                        <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
-                        <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
-                        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-                        <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
-                        <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-                        <ul class="page-sidebar-menu page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                            <li class="start active ">
-                                <a href="home.php">
-                                    <i class="icon-home"></i>
-                                    <span class="title">Inicio</span>
-                                    <span class="selected"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="courts.php">
-                                    <i class="icon-list"></i>
-                                    <span class="title">Pistas</span>
-                                    <span class="selected"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="users.php">
-                                    <i class="icon-user"></i>
-                                    <span class="title">Usuarios</span>
-                                    <span class="selected"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="groups.php">
-                                    <i class="icon-users"></i>
-                                    <span class="title">Grupos</span>
-                                    <span class="selected"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="reservations.php">
-                                    <i class="icon-calendar"></i>
-                                    <span class="title">Reservas</span>
-                                    <span class="selected"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- END SIDEBAR MENU -->
-                    </div>
+                    <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+                    <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                    <ul class="page-sidebar-menu page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <li class="start active ">
+                            <a href="home.php">
+                                <i class="icon-home"></i>
+                                <span class="title">Inicio</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="courts.php">
+                                <i class="icon-list"></i>
+                                <span class="title">Pistas</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="users.php">
+                                <i class="icon-user"></i>
+                                <span class="title">Usuarios</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="groups.php">
+                                <i class="icon-users"></i>
+                                <span class="title">Grupos</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="reservations.php">
+                                <i class="icon-calendar"></i>
+                                <span class="title">Reservas</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- END SIDEBAR MENU -->
                 </div>
-                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
 
 
