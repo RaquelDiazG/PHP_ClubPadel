@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 /**
  * Reservation
  */
-class Reservation
-{
+class Reservation {
+
     /**
      * @var integer
      */
@@ -18,23 +18,32 @@ class Reservation
     private $datetime;
 
     /**
-     * @var \AppBundle\Entity\Courts
+     * @var \AppBundle\Entity\Court
      */
     private $court;
 
     /**
-     * @var \AppBundle\Entity\Users
+     * @var \AppBundle\Entity\User
      */
     private $user;
 
+    /**
+     * Constructor
+     *
+     * @param dateTime $datetime
+     * @param integer $court
+     * @param integer $user
+     */
+    public function __construct($datetime = null) {
+        $this->datetime = $datetime;
+    }
 
     /**
      * Get id
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -45,10 +54,8 @@ class Reservation
      *
      * @return Reservation
      */
-    public function setDatetime($datetime)
-    {
+    public function setDatetime($datetime) {
         $this->datetime = $datetime;
-
         return $this;
     }
 
@@ -57,57 +64,50 @@ class Reservation
      *
      * @return \DateTime
      */
-    public function getDatetime()
-    {
+    public function getDatetime() {
         return $this->datetime;
     }
 
     /**
      * Set court
      *
-     * @param \AppBundle\Entity\Courts $court
+     * @param \AppBundle\Entity\Court $court
      *
      * @return Reservation
      */
-    public function setCourt(\AppBundle\Entity\Courts $court = null)
-    {
+    public function setCourt(\AppBundle\Entity\Court $court = null) {
         $this->court = $court;
-
         return $this;
     }
 
     /**
      * Get court
      *
-     * @return \AppBundle\Entity\Courts
+     * @return \AppBundle\Entity\Court
      */
-    public function getCourt()
-    {
+    public function getCourt() {
         return $this->court;
     }
 
     /**
      * Set user
      *
-     * @param \AppBundle\Entity\Users $user
+     * @param \AppBundle\Entity\User $user
      *
      * @return Reservation
      */
-    public function setUser(\AppBundle\Entity\Users $user = null)
-    {
+    public function setUser(\AppBundle\Entity\User $user = null) {
         $this->user = $user;
-
         return $this;
     }
 
     /**
      * Get user
      *
-     * @return \AppBundle\Entity\Users
+     * @return \AppBundle\Entity\User
      */
-    public function getUser()
-    {
+    public function getUser() {
         return $this->user;
     }
-}
 
+}

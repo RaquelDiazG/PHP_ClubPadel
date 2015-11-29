@@ -30,7 +30,7 @@ AppBundle\Entity\Reservation:
             nullable: false
     manyToOne:
         court:
-            targetEntity: Courts
+            targetEntity: Court
             cascade: {  }
             fetch: LAZY
             mappedBy: null
@@ -40,7 +40,7 @@ AppBundle\Entity\Reservation:
                     referencedColumnName: id
             orphanRemoval: false
         user:
-            targetEntity: Users
+            targetEntity: User
             cascade: {  }
             fetch: LAZY
             mappedBy: null
