@@ -1,6 +1,8 @@
 
 <?php include("head.php"); ?>
 
+<?php require_once __DIR__ . '/../../../config/bootstrap.php'; ?>
+
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -54,20 +56,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $entityManager = GetEntityManager();
+                                    $reservationRepository = $entityManager->getRepository('AppBundle\Entity\Reservation');
+                                    $reservations = $reservationRepository->findAll();
+                                    foreach ($reservations as $reservation) {
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $reservation->getId(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $reservation->getDatetime()->format('d-m-Y H:i:s'); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $reservation->getCourt(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $reservation->getUser(); ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
