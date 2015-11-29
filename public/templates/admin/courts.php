@@ -46,6 +46,9 @@
                                         <th>
                                             Disponible
                                         </th>
+                                        <th>
+                                            Acciones
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -60,7 +63,6 @@
                                                 <?php echo $court->getId(); ?>
                                             </td>
                                             <td>
-
                                                 <div class="checker disabled">
                                                     <span>
                                                         <input type="checkbox" disabled
@@ -70,9 +72,17 @@
                                                         }
                                                         ?>
                                                                >
+                                                               <?php echo $court->getActive() ? 'SI' : 'NO'; ?>
                                                     </span>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-xs default red-stripe">Modificar</button>
 
+                                                <form action="../../crud/deleteCourt.php" method="POST">
+                                                    <input type="hidden" name="id" value="<?php echo $court->getId(); ?>">
+                                                    <button type="submit" class="btn btn-xs default red-stripe">Eliminar</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     <?php } ?>
