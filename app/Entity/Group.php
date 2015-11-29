@@ -37,7 +37,6 @@ class Group {
         $this->name = $name;
         $this->roles = $roles;
         $this->user = new \Doctrine\Common\Collections\ArrayCollection();
-//        $this->user->add($user);
     }
 
     /**
@@ -119,6 +118,16 @@ class Group {
      */
     public function getUser() {
         return $this->user;
+    }
+
+    /**
+     * To string
+     *
+     * @return string
+     */
+    public function __toString() {
+        return $this->id . "-" .
+                $this->name;
     }
 
 }
