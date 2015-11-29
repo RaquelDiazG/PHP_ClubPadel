@@ -1,6 +1,8 @@
 
 <?php include("head.php"); ?>
 
+<?php require_once __DIR__ . '/../../../config/bootstrap.php'; ?>
+
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -53,16 +55,16 @@
                                         <th>
                                             Email canonical
                                         </th>
-                                        <th>
+<!--                                        <th>
                                             Enabled
                                         </th>
                                         <th>
                                             Salt
-                                        </th>
+                                        </th>-->
                                         <th>
                                             Password
                                         </th>
-                                        <th>
+<!--                                        <th>
                                             Last login
                                         </th>
                                         <th>
@@ -79,72 +81,75 @@
                                         </th>
                                         <th>
                                             Password requested at
-                                        </th>
+                                        </th>-->
                                         <th>
                                             Roles
                                         </th>
-                                        <th>
+<!--                                        <th>
                                             Credentials expired
                                         </th>
                                         <th>
                                             Credentials expire at
+                                        </th>-->
+                                        <th>
+                                            Groups
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $entityManager = GetEntityManager();
+                                    $userRepository = $entityManager->getRepository('AppBundle\Entity\User');
+                                    $users = $userRepository->findAll();
+                                    foreach ($users as $user) {
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $user->getId(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $user->getUsername(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $user->getUsernameCanonical(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $user->getEmail(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $user->getEmailCanonical(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $user->getPassword(); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo implode(", ", $user->getRoles()); ?>
+                                            </td>
+                                            <td>
+                                                <?php echo implode(", ", $user->getGroup()->getValues()); ?>
+                                            </td>
+    <!--                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td>
+                                            </td>-->
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
