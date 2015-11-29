@@ -100,7 +100,7 @@ AppBundle\Entity\User:
             column: credentials_expire_at
     manyToMany:
         group:
-            targetEntity: Groups
+            targetEntity: Group
             cascade: {  }
             fetch: LAZY
             mappedBy: null
