@@ -52,7 +52,9 @@
                                         <th>
                                             Fecha y hora
                                         </th>
-
+                                        <th>
+                                            Acciones
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,6 +76,14 @@
                                             </td>
                                             <td>
                                                 <?php echo $reservation->getDatetime()->format('d-m-Y H:i:s'); ?>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-xs default red-stripe">Modificar</button>
+
+                                                <form action="../../crud/deleteReservation.php" method="POST">
+                                                    <input type="hidden" name="id" value="<?php echo $reservation->getId(); ?>">
+                                                    <button type="submit" class="btn btn-xs default red-stripe">Eliminar</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     <?php } ?>
