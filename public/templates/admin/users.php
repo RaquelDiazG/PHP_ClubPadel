@@ -94,6 +94,9 @@
                                         <th>
                                             Grupos
                                         </th>
+                                        <th>
+                                            Acciones
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -148,6 +151,14 @@
                                             </td>
                                             <td>
                                             </td>-->
+                                            <td>
+                                                <button type="button" class="btn btn-xs default red-stripe">Modificar</button>
+
+                                                <form action="../../crud/deleteUser.php" method="POST">
+                                                    <input type="hidden" name="id" value="<?php echo $user->getId(); ?>">
+                                                    <button type="submit" class="btn btn-xs default red-stripe">Eliminar</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
