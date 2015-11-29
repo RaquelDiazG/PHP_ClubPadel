@@ -495,4 +495,14 @@ class User {
         return $this->group;
     }
 
+    /**
+     * To string
+     *
+     * @return string
+     */
+    public function __toString() {
+        return $this->id . "-" .
+                $this->username;
+    }
+
 }
