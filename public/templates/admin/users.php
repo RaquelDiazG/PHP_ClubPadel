@@ -27,8 +27,60 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
+                <div class="portlet box grey-gallery">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>Crear nuevo usuario
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form" action="../../crud/createUser.php" method="POST">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Nombre</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Nombre de usuario" name="username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Email</label>
+                                    <div class="col-md-9">
+                                        <input type="email" class="form-control" placeholder="Email" name="email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Contraseña</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" placeholder="Contraseña" name="password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Roles</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">ID grupo</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="ID del grupo" name="groupID">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 control-label">
+                                        <button type="submit" class="btn red-flamingo-stripe">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="row">
+            <div class="col-md-12">
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
