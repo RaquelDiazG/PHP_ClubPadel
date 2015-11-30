@@ -1,7 +1,13 @@
 
 <?php include("header.php"); ?>
 
-<?php require_once __DIR__ . '/../../../config/bootstrap.php'; ?>
+<?php
+require_once __DIR__ . '/../../../config/bootstrap.php';
+
+$entityManager = GetEntityManager();
+$courtRepository = $entityManager->getRepository('AppBundle\Entity\Court');
+$courts = $courtRepository->findAll();
+?>
 
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
@@ -86,9 +92,6 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $entityManager = GetEntityManager();
-                                    $courtRepository = $entityManager->getRepository('AppBundle\Entity\Court');
-                                    $courts = $courtRepository->findAll();
                                     foreach ($courts as $court) {
                                         ?>
                                         <tr>
@@ -110,7 +113,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-xs default red-stripe">Modificar</button>
+                                                <a class="btn btn-xs default red-stripe" data-toggle="modal" href="#modal_<?php echo $court->getId(); ?>">Modificar</a>
 
                                                 <form action="../../crud/deleteCourt.php" method="POST">
                                                     <input type="hidden" name="id" value="<?php echo $court->getId(); ?>">
@@ -128,6 +131,48 @@
             </div>
         </div>
         <!-- END SAMPLE TABLE PORTLET-->
+
+        <!-- BEGIN MODAL-->
+        <?php foreach ($courts as $court) { ?>
+            <div class="modal fade" id="modal_<?php echo $court->getId(); ?>" tabindex="-1" role="basic" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Modificar pista</h4>
+                        </div>
+                        <form action="../../crud/updateCourt.php" method="POST">
+                            <div class="modal-body">
+                                <input type="hidden" name="id" value="<?php echo $court->getId(); ?>">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Disponible</label>
+                                    <div class="col-md-6">
+                                        <div class="checkbox-list">
+                                            <label class="checkbox-inline">
+                                                <div class="checker">
+                                                    <span><input type="checkbox" name="disponible" value="1"
+                                                        <?php
+                                                        if ($court->getActive()) {
+                                                            echo 'checked';
+                                                        }
+                                                        ?> >
+                                                    </span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn default" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn red">Modificar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+        <!-- END MODAL -->
     </div>
     <!-- END PAGE CONTENT-->
 </div>
