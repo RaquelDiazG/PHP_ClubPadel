@@ -27,10 +27,10 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
-                <div class="portlet box red-flamingo">
+                <div class="portlet box grey-gallery">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>Crear nueva pista
+                            <i class="fa fa-list"></i> <i class="fa fa-plus"></i> Crear nueva pista
                         </div>
                     </div>
                     <div class="portlet-body form">
@@ -41,12 +41,14 @@
                                     <div class="col-md-6">
                                         <div class="checkbox-list">
                                             <label class="checkbox-inline">
-                                                <div class="checker" id="uniform-disponible">
+                                                <div class="checker">
                                                     <span><input type="checkbox" name="disponible" value="1"></span>
                                                 </div> Sí</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 control-label">
                                         <button type="submit" class="btn red-flamingo-stripe">Crear</button>
                                     </div>
                                 </div>
@@ -57,14 +59,13 @@
             </div>
         </div>
 
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
         <div class="row">
             <div class="col-md-12">
-
-                <!-- BEGIN SAMPLE TABLE PORTLET-->
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>Todas las pistas
+                            <i class="fa fa-list"></i>Todas las pistas
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -124,11 +125,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- END SAMPLE TABLE PORTLET-->
             </div>
         </div>
-        <!-- END PAGE CONTENT-->
+        <!-- END SAMPLE TABLE PORTLET-->
     </div>
+    <!-- END PAGE CONTENT-->
 </div>
 <!-- END CONTENT -->
 

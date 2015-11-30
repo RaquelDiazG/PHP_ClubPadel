@@ -30,7 +30,7 @@
                 <div class="portlet box grey-gallery">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>Crear nueva reserva
+                            <i class="fa fa-calendar"></i> <i class="fa fa-plus"></i> Crear nueva reserva
                         </div>
                     </div>
                     <div class="portlet-body form">
@@ -72,7 +72,7 @@
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>Todas las reservas
+                            <i class="fa fa-calendar"></i>Todas las reservas
                         </div>
                     </div>
                     <div class="portlet-body">

@@ -30,7 +30,7 @@
                 <div class="portlet box grey-gallery">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>Crear nuevo grupo
+                            <i class="fa fa-users"></i> <i class="fa fa-plus"></i> Crear nuevo grupo
                         </div>
                     </div>
                     <div class="portlet-body form">
@@ -71,7 +71,7 @@
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>Todos los grupos
+                            <i class="fa fa-users"></i>Todos los grupos
                         </div>
                     </div>
                     <div class="portlet-body">

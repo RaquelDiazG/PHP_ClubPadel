@@ -30,7 +30,7 @@
                 <div class="portlet box grey-gallery">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>Crear nuevo usuario
+                            <i class="fa fa-user"></i> <i class="fa fa-plus"></i> Crear nuevo usuario
                         </div>
                     </div>
                     <div class="portlet-body form">
@@ -84,7 +84,7 @@
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="fa fa-cogs"></i>Todos los usuarios
+                            <i class="fa fa-user"></i>Todos los usuarios
                         </div>
                     </div>
                     <div class="portlet-body">
