@@ -1,7 +1,12 @@
 
 <?php include("header.php"); ?>
 
-<?php require_once __DIR__ . '/../../../config/bootstrap.php'; ?>
+<?php
+require_once __DIR__ . '/../../../config/bootstrap.php';
+$entityManager = GetEntityManager();
+$groupRepository = $entityManager->getRepository('AppBundle\Entity\Group');
+$groups = $groupRepository->findAll();
+?>
 
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
@@ -97,12 +102,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    $entityManager = GetEntityManager();
-                                    $groupRepository = $entityManager->getRepository('AppBundle\Entity\Group');
-                                    $groups = $groupRepository->findAll();
-                                    foreach ($groups as $group) {
-                                        ?>
+                                    <?php foreach ($groups as $group) { ?>
                                         <tr>
                                             <td>
                                                 <?php echo $group->getId(); ?>
@@ -117,7 +117,7 @@
                                                 <?php echo implode(", ", $group->getUser()->getValues()); ?>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-xs default red-stripe">Modificar</button>
+                                                <a class="btn btn-xs default red-stripe" data-toggle="modal" href="#modal_<?php echo $group->getId(); ?>">Modificar</a>
 
                                                 <form action="../../crud/deleteGroup.php" method="POST">
                                                     <input type="hidden" name="id" value="<?php echo $group->getId(); ?>">
@@ -135,6 +135,55 @@
             </div>
         </div>
         <!-- END PAGE CONTENT-->
+
+        <!-- BEGIN MODAL-->
+        <?php foreach ($groups as $group) { ?>
+            <div class="modal fade" id="modal_<?php echo $group->getId(); ?>" tabindex="-1" role="basic" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Modificar grupo</h4>
+                        </div>
+                        <form action="../../crud/updateGroup.php" method="POST">
+                            <div class="modal-body">
+                                <input type="hidden" name="id" value="<?php echo $group->getId(); ?>">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Nombre</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $group->getName(); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Roles</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles" value="<?php echo implode(", ", $group->getRoles()); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">ID usuario</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID" value="<?php echo implode(", ", $group->getUser()->getValues()); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-3 control-label">
+                                            <button type="submit" class="btn red-flamingo-stripe">Crear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn default" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn red">Modificar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+        <!-- END MODAL -->
     </div>
 </div>
 <!-- END CONTENT -->
