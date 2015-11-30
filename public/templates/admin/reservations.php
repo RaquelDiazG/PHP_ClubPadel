@@ -27,8 +27,48 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
+                <div class="portlet box grey-gallery">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>Crear nueva reserva
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form" action="../../crud/createReservation.php" method="POST">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Fecha y hora</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control form-control-inline date form_datetime" size="16" value="" name="datetime" id="datetime">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">ID pista</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="ID de la pista" name="pistaID">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">ID usuario</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 control-label">
+                                        <button type="submit" class="btn red-flamingo-stripe">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="row">
+            <div class="col-md-12">
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
@@ -92,11 +132,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- END SAMPLE TABLE PORTLET-->
             </div>
         </div>
-        <!-- END PAGE CONTENT-->
+        <!-- END SAMPLE TABLE PORTLET-->
     </div>
+    <!-- END PAGE CONTENT-->
 </div>
 <!-- END CONTENT -->
 

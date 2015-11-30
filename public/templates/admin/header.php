@@ -29,6 +29,8 @@
         <link href="../../assets/admin/layout2/css/custom.css" rel="stylesheet" type="text/css"/>
         <!-- END THEME STYLES -->
 
+        <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+
         <link rel="shortcut icon" href="../../custom/img/favicon.ico"/>
     </head>
     <!-- END HEAD -->

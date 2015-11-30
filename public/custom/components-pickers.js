@@ -4,16 +4,12 @@ var ComponentsPickers = function () {
         init: function () {
 
             if (jQuery().datepicker) {
-                $('.date-picker').datepicker({
-                    orientation: "left",
+                $(".form_datetime").datetimepicker({
                     autoclose: true,
+                    format: "dd-mm-yyyy hh:ii",
+                    orientation: "left",
                     todayHighlight: true,
                     language: 'es'
-                });
-                $('.date-picker').on("changeDate", function () {
-                    $('#fechaReserva').val(
-                            $('.date-picker').datepicker('getFormattedDate')
-                            );
                 });
             }
         }
