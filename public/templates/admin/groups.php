@@ -27,8 +27,47 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
-
-                <!-- BEGIN SAMPLE TABLE PORTLET-->
+                <div class="portlet box grey-gallery">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>Crear nuevo grupo
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form" action="../../crud/createGroup.php" method="POST">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Nombre</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Roles</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">ID usuario</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 control-label">
+                                        <button type="submit" class="btn red-flamingo-stripe">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="row">
+            <div class="col-md-12">
                 <div class="portlet box red-flamingo">
                     <div class="portlet-title">
                         <div class="caption">
