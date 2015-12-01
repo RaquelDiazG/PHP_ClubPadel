@@ -130,7 +130,7 @@ $groups = $groupRepository->findAll();
             <div class="modal fade" id="modal_<?php echo $group->getId(); ?>" tabindex="-1" role="basic" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header bg-grey-gallery">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                             <h4 class="modal-title">Modificar grupo</h4>
                         </div>
@@ -156,16 +156,11 @@ $groups = $groupRepository->findAll();
                                             <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID" value="<?php echo implode(", ", $group->getUser()->getValues()); ?>">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="col-md-3 control-label">
-                                            <button type="submit" class="btn red-flamingo-stripe">Crear</button>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn default" data-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn red">Modificar</button>
+                                <button type="submit" class="btn red-flamingo">Modificar</button>
                             </div>
                         </form>
                     </div>

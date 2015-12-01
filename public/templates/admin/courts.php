@@ -37,7 +37,9 @@ $courts = $courtRepository->findAll();
                                             <label class="checkbox-inline">
                                                 <div class="checker">
                                                     <span><input type="checkbox" name="disponible" value="1"></span>
-                                                </div> Sí</label>
+                                                </div>
+                                                Sí
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +127,7 @@ $courts = $courtRepository->findAll();
             <div class="modal fade" id="modal_<?php echo $court->getId(); ?>" tabindex="-1" role="basic" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header bg-grey-gallery">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                             <h4 class="modal-title">Modificar pista</h4>
                         </div>
@@ -133,8 +135,7 @@ $courts = $courtRepository->findAll();
                             <div class="modal-body">
                                 <input type="hidden" name="id" value="<?php echo $court->getId(); ?>">
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Disponible</label>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 col-md-offset-3">
                                         <div class="checkbox-list">
                                             <label class="checkbox-inline">
                                                 <div class="checker">
@@ -146,6 +147,7 @@ $courts = $courtRepository->findAll();
                                                         ?> >
                                                     </span>
                                                 </div>
+                                                Disponible
                                             </label>
                                         </div>
                                     </div>
@@ -153,7 +155,7 @@ $courts = $courtRepository->findAll();
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn default" data-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn red">Modificar</button>
+                                <button type="submit" class="btn red-flamingo">Modificar</button>
                             </div>
                         </form>
                     </div>
