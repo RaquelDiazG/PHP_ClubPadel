@@ -15,18 +15,6 @@ $users = $userRepository->findAll();
         <h3 class="page-title">
             Usuarios
         </h3>
-        <!--        <div class="page-bar">
-                    <ul class="page-breadcrumb">
-                        <li>
-                            <i class="fa fa-home"></i>
-                            <a href="index.html">Home</a>
-                            <i class="fa fa-angle-right"></i>
-                        </li>
-                        <li>
-                            <a href="#">Courts</a>
-                        </li>
-                    </ul>
-                </div>-->
         <!-- END PAGE HEADER-->
 
         <!-- BEGIN PAGE CONTENT-->
@@ -83,7 +71,7 @@ $users = $userRepository->findAll();
             </div>
         </div>
 
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <!-- BEGIN TABLE PORTLET-->
         <div class="row">
             <div class="col-md-12">
                 <div class="portlet box red-flamingo">
@@ -220,7 +208,7 @@ $users = $userRepository->findAll();
                         </div>
                     </div>
                 </div>
-                <!-- END SAMPLE TABLE PORTLET-->
+                <!-- END TABLE PORTLET-->
             </div>
         </div>
         <!-- END PAGE CONTENT-->

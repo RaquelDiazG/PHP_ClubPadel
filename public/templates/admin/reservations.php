@@ -15,18 +15,6 @@ $reservations = $reservationRepository->findAll();
         <h3 class="page-title">
             Reservas
         </h3>
-        <!--        <div class="page-bar">
-                    <ul class="page-breadcrumb">
-                        <li>
-                            <i class="fa fa-home"></i>
-                            <a href="index.html">Home</a>
-                            <i class="fa fa-angle-right"></i>
-                        </li>
-                        <li>
-                            <a href="#">Courts</a>
-                        </li>
-                    </ul>
-                </div>-->
         <!-- END PAGE HEADER-->
 
         <!-- BEGIN PAGE CONTENT-->
@@ -71,7 +59,7 @@ $reservations = $reservationRepository->findAll();
             </div>
         </div>
 
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <!-- BEGIN TABLE PORTLET-->
         <div class="row">
             <div class="col-md-12">
                 <div class="portlet box red-flamingo">
@@ -134,7 +122,7 @@ $reservations = $reservationRepository->findAll();
                 </div>
             </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
+        <!-- END TABLE PORTLET-->
 
         <!-- BEGIN MODAL-->
         <?php foreach ($reservations as $reservation) { ?>
@@ -179,6 +167,7 @@ $reservations = $reservationRepository->findAll();
             </div>
         <?php } ?>
         <!-- END MODAL -->
+
     </div>
     <!-- END PAGE CONTENT-->
 </div>

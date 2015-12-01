@@ -16,18 +16,6 @@ $courts = $courtRepository->findAll();
         <h3 class="page-title">
             Pistas
         </h3>
-        <!--        <div class="page-bar">
-                    <ul class="page-breadcrumb">
-                        <li>
-                            <i class="fa fa-home"></i>
-                            <a href="index.html">Home</a>
-                            <i class="fa fa-angle-right"></i>
-                        </li>
-                        <li>
-                            <a href="#">Courts</a>
-                        </li>
-                    </ul>
-                </div>-->
         <!-- END PAGE HEADER-->
 
         <!-- BEGIN PAGE CONTENT-->
@@ -65,7 +53,7 @@ $courts = $courtRepository->findAll();
             </div>
         </div>
 
-        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <!-- BEGIN TABLE PORTLET-->
         <div class="row">
             <div class="col-md-12">
                 <div class="portlet box red-flamingo">
@@ -130,7 +118,7 @@ $courts = $courtRepository->findAll();
                 </div>
             </div>
         </div>
-        <!-- END SAMPLE TABLE PORTLET-->
+        <!-- END TABLE PORTLET-->
 
         <!-- BEGIN MODAL-->
         <?php foreach ($courts as $court) { ?>
@@ -173,6 +161,7 @@ $courts = $courtRepository->findAll();
             </div>
         <?php } ?>
         <!-- END MODAL -->
+
     </div>
     <!-- END PAGE CONTENT-->
 </div>
