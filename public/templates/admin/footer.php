@@ -23,6 +23,7 @@
 <script type="text/javascript" src="../../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript" src="../../assets/global/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.es.js"></script>
 <script src="../../custom/components-pickers.js" type="text/javascript"></script>
+<script src="../../custom/custom.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
     jQuery(document).ready(function () {

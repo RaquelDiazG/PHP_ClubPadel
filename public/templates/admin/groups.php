@@ -189,3 +189,7 @@ $groups = $groupRepository->findAll();
 <!-- END CONTENT -->
 
 <?php include("footer.php"); ?>
+
+<script>
+    seleccionarMenu('Grupos');
+</script>

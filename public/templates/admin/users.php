@@ -286,3 +286,7 @@ $users = $userRepository->findAll();
 <!-- END CONTENT -->
 
 <?php include("footer.php"); ?>
+
+<script>
+    seleccionarMenu('Usuarios');
+</script>

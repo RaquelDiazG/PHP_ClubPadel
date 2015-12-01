@@ -185,3 +185,7 @@ $reservations = $reservationRepository->findAll();
 <!-- END CONTENT -->
 
 <?php include("footer.php"); ?>
+
+<script>
+    seleccionarMenu('Reservas');
+</script>

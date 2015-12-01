@@ -109,3 +109,7 @@ $numUsers = count($userRepository->findAll());
 <!-- END CONTENT -->
 
 <?php include("footer.php"); ?>
+
+<script>
+    seleccionarMenu('Inicio');
+</script>
