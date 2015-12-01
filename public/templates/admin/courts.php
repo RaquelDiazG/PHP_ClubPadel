@@ -131,7 +131,7 @@ $courts = $courtRepository->findAll();
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                             <h4 class="modal-title">Modificar pista</h4>
                         </div>
-                        <form action="../../crud/updateCourt.php" method="POST">
+                        <form class="form-horizontal" role="form" action="../../crud/updateCourt.php" method="POST">
                             <div class="modal-body">
                                 <input type="hidden" name="id" value="<?php echo $court->getId(); ?>">
                                 <div class="form-group">

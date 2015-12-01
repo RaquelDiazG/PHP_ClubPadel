@@ -134,7 +134,7 @@ $groups = $groupRepository->findAll();
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                             <h4 class="modal-title">Modificar grupo</h4>
                         </div>
-                        <form action="../../crud/updateGroup.php" method="POST">
+                        <form class="form-horizontal" role="form" action="../../crud/updateGroup.php" method="POST">
                             <div class="modal-body">
                                 <input type="hidden" name="id" value="<?php echo $group->getId(); ?>">
                                 <div class="form-body">
