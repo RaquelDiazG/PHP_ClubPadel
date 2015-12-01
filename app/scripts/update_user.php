@@ -8,12 +8,12 @@ if ($argc !== 7) {
     exit();
 }
 
-//Get court (object)
+//Get user (object)
 $entityManager = GetEntityManager();
 $userRepository = $entityManager->getRepository('AppBundle\Entity\User');
 $user = $userRepository->find(intval($argv[1]));
 
-//Update court (object)
+//Update user (object)
 $user->setUsername($argv[2]);
 $user->setUsernameCanonical(strtolower($argv[2]));
 $user->setEmail($argv[3]);
