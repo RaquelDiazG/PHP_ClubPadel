@@ -1,7 +1,12 @@
 
 <?php include("header.php"); ?>
 
-<?php require_once __DIR__ . '/../../../config/bootstrap.php'; ?>
+<?php
+require_once __DIR__ . '/../../../config/bootstrap.php';
+$entityManager = GetEntityManager();
+$reservationRepository = $entityManager->getRepository('AppBundle\Entity\Reservation');
+$reservations = $reservationRepository->findAll();
+?>
 
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
@@ -39,7 +44,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Fecha y hora</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control form-control-inline date form_datetime" size="16" value="" name="datetime" id="datetime">
+                                        <input type="text" class="form-control form-control-inline date form_datetime" size="16" placeholder="Fecha y hora" name="datetime" id="datetime">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -98,12 +103,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    $entityManager = GetEntityManager();
-                                    $reservationRepository = $entityManager->getRepository('AppBundle\Entity\Reservation');
-                                    $reservations = $reservationRepository->findAll();
-                                    foreach ($reservations as $reservation) {
-                                        ?>
+                                    <?php foreach ($reservations as $reservation) { ?>
                                         <tr>
                                             <td>
                                                 <?php echo $reservation->getId(); ?>
@@ -118,7 +118,7 @@
                                                 <?php echo $reservation->getDatetime()->format('d-m-Y H:i:s'); ?>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-xs default red-stripe">Modificar</button>
+                                                <a class="btn btn-xs default red-stripe" data-toggle="modal" href="#modal_<?php echo $reservation->getId(); ?>">Modificar</a>
 
                                                 <form action="../../crud/deleteReservation.php" method="POST">
                                                     <input type="hidden" name="id" value="<?php echo $reservation->getId(); ?>">
@@ -135,6 +135,50 @@
             </div>
         </div>
         <!-- END SAMPLE TABLE PORTLET-->
+
+        <!-- BEGIN MODAL-->
+        <?php foreach ($reservations as $reservation) { ?>
+            <div class="modal fade" id="modal_<?php echo $reservation->getId(); ?>" tabindex="-1" role="basic" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Modificar grupo</h4>
+                        </div>
+                        <form action="../../crud/updateReservation.php" method="POST">
+                            <div class="modal-body">
+                                <input type="hidden" name="id" value="<?php echo $reservation->getId(); ?>">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Fecha y hora</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control form-control-inline date form_datetime" size="16" value="<?php $reservation->getDatetime()->format('d-m-Y H:i:s'); ?>" name="datetime" id="datetime">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">ID pista</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="ID de la pista" name="pistaID" value="<?php echo $reservation->getCourt(); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">ID usuario</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID" value="<?php echo $reservation->getUser(); ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn default" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn red">Modificar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+        <!-- END MODAL -->
     </div>
     <!-- END PAGE CONTENT-->
 </div>

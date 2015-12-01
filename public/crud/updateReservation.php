@@ -2,29 +2,34 @@
 
 require_once __DIR__ . '/../../config/bootstrap.php';
 
-//Check usage
-if ($argc !== 5) {
-    echo "Usage:\n   php ", basename($argv[0]), ' id datetime(d-m-yTh-m-s) courtID userID' . PHP_EOL;
-    exit();
-}
+use AppBundle\Entity\Reservation;
+
+$id = $_POST['id'];
+$datetime = $_POST['datetime'];
+$pistaID = $_POST['pistaID'];
+$usuarioID = $_POST['usuarioID'];
 
 //Get reservation (object)
 $entityManager = GetEntityManager();
 $reservationRepository = $entityManager->getRepository('AppBundle\Entity\Reservation');
-$reservation = $reservationRepository->find(intval($argv[1]));
+$reservation = $reservationRepository->find(intval($id));
 
 //Update reservation (object)
-$reservation->setDatetime(new DateTime($argv[2]));
+$reservation->setDatetime(new DateTime($datetime));
 //Get court (object)
 $courtsRepository = $entityManager->getRepository('AppBundle\Entity\Court');
-$court = $courtsRepository->find(($argv[3]));
+$court = $courtsRepository->find(($pistaID));
 //Add court to reservation (many to one)
 $reservation->setCourt($court);
 //Get user (object)
 $usersRepository = $entityManager->getRepository('AppBundle\Entity\User');
-$user = $usersRepository->find(intval($argv[4]));
+$user = $usersRepository->find(intval($usuarioID));
 //Add user to reservation (many to one)
 $reservation->setUser($user);
 
 //Update to BBDD
 $entityManager->flush();
+
+//Redirect
+header('Location: ../templates/admin/reservations.php');
+
