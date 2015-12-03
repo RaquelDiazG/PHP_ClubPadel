@@ -108,7 +108,7 @@ $groups = $groupRepository->findAll();
                                             <td>
                                                 <a class="btn btn-xs default red-stripe" data-toggle="modal" href="#modal_<?php echo $group->getId(); ?>">Modificar</a>
 
-                                                <form action="../../crud/deleteGroup.php" method="POST">
+                                                <form class="col-md-6" action="../../crud/deleteGroup.php" method="POST">
                                                     <input type="hidden" name="id" value="<?php echo $group->getId(); ?>">
                                                     <button type="submit" class="btn btn-xs default red-stripe">Eliminar</button>
                                                 </form>

@@ -108,7 +108,7 @@ $reservations = $reservationRepository->findAll();
                                             <td>
                                                 <a class="btn btn-xs default red-stripe" data-toggle="modal" href="#modal_<?php echo $reservation->getId(); ?>">Modificar</a>
 
-                                                <form action="../../crud/deleteReservation.php" method="POST">
+                                                <form class="col-md-6" action="../../crud/deleteReservation.php" method="POST">
                                                     <input type="hidden" name="id" value="<?php echo $reservation->getId(); ?>">
                                                     <button type="submit" class="btn btn-xs default red-stripe">Eliminar</button>
                                                 </form>

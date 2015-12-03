@@ -105,7 +105,7 @@ $courts = $courtRepository->findAll();
                                             <td>
                                                 <a class="btn btn-xs default red-stripe" data-toggle="modal" href="#modal_<?php echo $court->getId(); ?>">Modificar</a>
 
-                                                <form action="../../crud/deleteCourt.php" method="POST">
+                                                <form class="col-md-6" action="../../crud/deleteCourt.php" method="POST">
                                                     <input type="hidden" name="id" value="<?php echo $court->getId(); ?>">
                                                     <button type="submit" class="btn btn-xs default red-stripe">Eliminar</button>
                                                 </form>
