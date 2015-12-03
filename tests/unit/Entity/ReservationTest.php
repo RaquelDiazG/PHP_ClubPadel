@@ -27,7 +27,9 @@ class ReservationTest extends \PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->reservation = new Reservation();
+        $this->reservation = new Reservation("15-11-2015T12:30:00");
+        $this->court = new Court(false);
+        $this->user = new User("user1", "user1@upm.es", "123", array("rol1"));
     }
 
     /**
@@ -46,10 +48,6 @@ class ReservationTest extends \PHPUnit_Framework_TestCase {
      * @covers AppBundle\Entity\Reservation::getDatetime
      */
     public function testConstructor() {
-        $this->reservation = new Reservation();
-        $this->assertEmpty($this->reservation->getId());
-        $this->assertEmpty($this->reservation->getDatetime());
-        $this->reservation = new Reservation(new DateTime("15-11-2015T12:30:00"));
         $this->assertEmpty($this->reservation->getId());
         $this->assertNotEmpty($this->reservation->getDatetime());
     }
@@ -67,9 +65,10 @@ class ReservationTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetDatetime().
      */
     public function testSetDatetime() {
-        $this->assertEmpty($this->reservation->getDatetime());
-        $this->reservation->setDatetime(new DateTime("15-11-2015T12:30:00"));
         $this->assertNotEmpty($this->reservation->getDatetime());
+        $this->reservation->setDatetime("15-11-2015T12:30:00");
+        $this->assertNotEmpty($this->reservation->getDatetime());
+        $this->assertEquals("15-11-2015T12:30:00", $this->reservation->getDatetime());
     }
 
     /**
@@ -77,7 +76,7 @@ class ReservationTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetDatetime().
      */
     public function testGetDatetime() {
-        $this->assertEquals(new DateTime("15-11-2015T12:30:00"), $this->reservation->getDatetime());
+        $this->assertEquals("15-11-2015T12:30:00", $this->reservation->getDatetime());
     }
 
     /**
@@ -95,7 +94,7 @@ class ReservationTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetCourt().
      */
     public function testGetCourt() {
-        $this->assertNotEmpty($this->reservation->getCourt());
+        $this->assertEmpty($this->reservation->getCourt());
     }
 
     /**
@@ -113,7 +112,7 @@ class ReservationTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetUser().
      */
     public function testGetUser() {
-        $this->assertNotEmpty($this->reservation->getUser());
+        $this->assertEmpty($this->reservation->getUser());
     }
 
 }
