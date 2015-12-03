@@ -11,6 +11,10 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * @var User
      */
     protected $user;
+
+    /**
+     * @var Group
+     */
     protected $group;
 
     /**
@@ -18,7 +22,8 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->user = new User();
+        $this->user = new User("user1", "user1@upm.es", "123", array("rol1"));
+        $this->group = new Group("group1", array("rol1", "rol2"));
     }
 
     /**
@@ -37,15 +42,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * @covers AppBundle\Entity\User::getDatetime
      */
     public function testConstructor() {
-        $this->user = new User();
         $this->assertEmpty($this->user->getId());
-        $this->assertEmpty($this->user->getUsername());
-        $this->assertEmpty($this->user->getEmail());
-        $this->assertEmpty($this->user->getPassword());
-        $this->assertEmpty($this->user->getRoles());
-        $this->user = new User("user1", "user1@upm.es", "123", array("rol1"));
-        $this->assertEmpty($this->reservation->getId());
-        $this->assertNotEmpty($this->user->getId());
         $this->assertNotEmpty($this->user->getUsername());
         $this->assertNotEmpty($this->user->getEmail());
         $this->assertNotEmpty($this->user->getPassword());
@@ -65,9 +62,10 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetUsername().
      */
     public function testSetUsername() {
-        $this->assertEmpty($this->user->getUsername());
-        $this->user->setUsername("user1");
         $this->assertNotEmpty($this->user->getUsername());
+        $this->user->setUsername("user2");
+        $this->assertNotEmpty($this->user->getUsername());
+        $this->assertEquals("user2", $this->user->getUsername());
     }
 
     /**
@@ -83,9 +81,10 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetUsernameCanonical().
      */
     public function testSetUsernameCanonical() {
-        $this->assertEmpty($this->user->getUsernameCanonical());
-        $this->user->setUsernameCanonical("user1");
         $this->assertNotEmpty($this->user->getUsernameCanonical());
+        $this->user->setUsernameCanonical("user2");
+        $this->assertNotEmpty($this->user->getUsernameCanonical());
+        $this->assertEquals("user2", $this->user->getUsernameCanonical());
     }
 
     /**
@@ -101,9 +100,10 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetEmail().
      */
     public function testSetEmail() {
-        $this->assertEmpty($this->user->getEmail());
-        $this->user->setEmail("user1@upm.es");
         $this->assertNotEmpty($this->user->getEmail());
+        $this->user->setEmail("user2@upm.es");
+        $this->assertNotEmpty($this->user->getEmail());
+        $this->assertEquals("user2@upm.es", $this->user->getEmail());
     }
 
     /**
@@ -119,9 +119,10 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetEmailCanonical().
      */
     public function testSetEmailCanonical() {
-        $this->assertEmpty($this->user->getEmailCanonical());
-        $this->user->setEmailCanonical("user1@upm.es");
         $this->assertNotEmpty($this->user->getEmailCanonical());
+        $this->user->setEmailCanonical("user2@upm.es");
+        $this->assertNotEmpty($this->user->getEmailCanonical());
+        $this->assertEquals("user2@upm.es", $this->user->getEmailCanonical());
     }
 
     /**
@@ -141,7 +142,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
         $this->user->setEnabled(true);
         $this->assertTrue($this->user->getEnabled());
         $this->user->setEnabled(false);
-        $this->assertTrue($this->user->getEnabled());
+        $this->assertFalse($this->user->getEnabled());
     }
 
     /**
@@ -149,7 +150,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetEnabled().
      */
     public function testGetEnabled() {
-        $this->assertFalse($this->user->getEnabled());
+        $this->assertTrue($this->user->getEnabled());
     }
 
     /**
@@ -157,9 +158,10 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetSalt().
      */
     public function testSetSalt() {
-        $this->assertEmpty($this->user->getSalt());
-        $this->user->setSalt("salt");
         $this->assertNotEmpty($this->user->getSalt());
+        $this->user->setSalt("salt2");
+        $this->assertNotEmpty($this->user->getSalt());
+        $this->assertEquals("salt2", $this->user->getSalt());
     }
 
     /**
@@ -175,9 +177,10 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetPassword().
      */
     public function testSetPassword() {
-        $this->assertEmpty($this->user->getPassword());
+        $this->assertNotEmpty($this->user->getPassword());
         $this->user->setPassword("123");
         $this->assertNotEmpty($this->user->getPassword());
+        $this->assertEquals("123", $this->user->getPassword());
     }
 
     /**
@@ -194,7 +197,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSetLastLogin() {
         $this->assertEmpty($this->user->getLastLogin());
-        $this->user->setLastLogin(new DateTime("15-11-2015T12:30:00"));
+        $this->user->setLastLogin("15-11-2015T12-30-00");
         $this->assertNotEmpty($this->user->getLastLogin());
     }
 
@@ -203,7 +206,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetLastLogin().
      */
     public function testGetLastLogin() {
-        $this->assertEquals(new DateTime("15-11-2015T12:30:00"), $this->user->getLastLogin());
+        $this->assertNull($this->user->getLastLogin());
     }
 
     /**
@@ -241,7 +244,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetExpired().
      */
     public function testGetExpired() {
-        $this->assertTrue($this->user->getExpired());
+        $this->assertFalse($this->user->getExpired());
     }
 
     /**
@@ -250,7 +253,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSetExpiresAt() {
         $this->assertEmpty($this->user->getExpiresAt());
-        $this->user->setExpiresAt(new DateTime("15-11-2015T12:30:00"));
+        $this->user->setExpiresAt("15-11-2015T12:30:00");
         $this->assertNotEmpty($this->user->getExpiresAt());
     }
 
@@ -259,7 +262,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetExpiresAt().
      */
     public function testGetExpiresAt() {
-        $this->assertEquals(new DateTime("15-11-2015T12:30:00"), $this->user->getExpiresAt());
+        $this->assertNull($this->user->getExpiresAt());
     }
 
     /**
@@ -277,7 +280,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetConfirmationToken().
      */
     public function testGetConfirmationToken() {
-        $this->assertEquals("token", $this->user->getConfirmationToken());
+        $this->assertNull($this->user->getConfirmationToken());
     }
 
     /**
@@ -286,7 +289,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSetPasswordRequestedAt() {
         $this->assertEmpty($this->user->getPasswordRequestedAt());
-        $this->user->setPasswordRequestedAt(new DateTime("15-11-2015T12:30:00"));
+        $this->user->setPasswordRequestedAt("15-11-2015T12:30:00");
         $this->assertNotEmpty($this->user->getPasswordRequestedAt());
     }
 
@@ -295,7 +298,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetPasswordRequestedAt().
      */
     public function testGetPasswordRequestedAt() {
-        $this->assertEquals(new DateTime("15-11-2015T12:30:00"), $this->user->getPasswordRequestedAt());
+        $this->assertNull($this->user->getPasswordRequestedAt());
     }
 
     /**
@@ -303,7 +306,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetRoles().
      */
     public function testSetRoles() {
-        $this->assertEmpty($this->user->getRoles());
+        $this->assertNotEmpty($this->user->getRoles());
         $this->assertNotEmpty($this->user->setRoles(array("rol1", "rol2")));
     }
 
@@ -312,7 +315,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetRoles().
      */
     public function testGetRoles() {
-        $this->assertEquals(array("rol1", "rol2"), $this->user->getRoles());
+        $this->assertNotEmpty($this->user->getRoles());
     }
 
     /**
@@ -330,7 +333,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetCredentialsExpired().
      */
     public function testGetCredentialsExpired() {
-        $this->assertTrue($this->user->getCredentialsExpired());
+        $this->assertFalse($this->user->getCredentialsExpired());
     }
 
     /**
@@ -339,7 +342,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSetCredentialsExpireAt() {
         $this->assertEmpty($this->user->getCredentialsExpireAt());
-        $this->user->setCredentialsExpireAt(new DateTime("15-11-2015T12:30:00"));
+        $this->user->setCredentialsExpireAt("15-11-2015T12:30:00");
         $this->assertNotEmpty($this->user->getCredentialsExpireAt());
     }
 
@@ -348,7 +351,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetCredentialsExpireAt().
      */
     public function testGetCredentialsExpireAt() {
-        $this->assertEquals(new DateTime("15-11-2015T12:30:00"), $this->user->getCredentialsExpireAt());
+        $this->assertNull($this->user->getCredentialsExpireAt());
     }
 
     /**
@@ -357,7 +360,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      */
     public function testAddGroup() {
         $this->assertEmpty($this->user->getGroup());
-        $this->user->setGroup($this->group);
+        $this->user->addGroup($this->group);
         $this->assertNotEmpty($this->user->getGroup());
     }
 
@@ -366,9 +369,9 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testRemoveGroup().
      */
     public function testRemoveGroup() {
-        $this->assertNotEmpty($this->user->removeGroup());
+        $this->assertEmpty($this->user->getGroup());
         $this->user->removeGroup($this->group);
-        $this->assertEmpty($this->user->removeGroup());
+        $this->assertEmpty($this->user->getGroup());
     }
 
     /**
@@ -376,7 +379,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetGroup().
      */
     public function testGetGroup() {
-        $this->assertEquals($this->group, $this->user->getGroup());
+        $this->assertEmpty($this->user->getGroup());
     }
 
     /**
@@ -384,7 +387,7 @@ class UserTest extends \PHPUnit_Framework_TestCase {
      * Implement test__toString().
      */
     public function test__toString() {
-        $this->assertEquals("1-user1", $this->user->__toString());
+        $this->assertEquals("-user1", $this->user->__toString());
     }
 
 }
