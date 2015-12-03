@@ -22,7 +22,7 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->group = new Group();
+        $this->group = new Group("Group1", array("rol1", "rol2"));
         $this->user = new User("user1", "user1@upm.es", "123", array("rol1"));
     }
 
@@ -66,8 +66,8 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetName().
      */
     public function testSetName() {
-        $this->assertEmpty($this->group->getName());
-        $this->assertNotEmpty($this->group->setName("Group1"));
+        $this->group->setName("Group2");
+        $this->assertEquals("Group2", $this->group->getName());
     }
 
     /**
@@ -75,6 +75,7 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetName().
      */
     public function testGetName() {
+        $this->assertNotEmpty($this->group->getName());
         $this->assertEquals("Group1", $this->group->getName());
     }
 
@@ -83,8 +84,11 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      * Implement testSetRoles().
      */
     public function testSetRoles() {
-        $this->assertEmpty($this->group->getRoles());
-        $this->assertNotEmpty($this->group->setRoles(array("rol1", "rol2")));
+        $this->assertNotEmpty($this->group->getRoles());
+        $this->assertEquals(2, count($this->group->getRoles()));
+        $this->group->setRoles(array("rol1"));
+        $this->assertNotEmpty($this->group->getRoles());
+        $this->assertEquals(1, count($this->group->getRoles()));
     }
 
     /**
@@ -92,7 +96,8 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetRoles().
      */
     public function testGetRoles() {
-        $this->assertEquals(array("rol1", "rol2"), $this->group->getRoles());
+        $this->group->setRoles(array("rol1", "rol2"));
+        $this->assertEquals(2, count($this->group->getRoles()));
     }
 
     /**
@@ -101,7 +106,8 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      */
     public function testAddUser() {
         $this->assertEmpty($this->group->getUser());
-        $this->assertNotEmpty($this->group->setUser($this->user));
+        $this->group->addUser($this->user);
+        $this->assertNotEmpty($this->group->getUser());
     }
 
     /**
@@ -109,8 +115,9 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      * Implement testRemoveUser().
      */
     public function testRemoveUser() {
-        $this->assertNotEmpty($this->group->removeUser($this->user));
-        $this->assertEmpty($this->group->getUser($this->user));
+        $this->assertEmpty($this->group->getUser());
+        $this->group->removeUser($this->user);
+        $this->assertEmpty($this->group->getUser());
     }
 
     /**
@@ -118,7 +125,7 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      * Implement testGetUser().
      */
     public function testGetUser() {
-        $this->assertEquals($this->user, $this->group->getUser());
+        $this->assertEquals(0, count($this->group->getUser()));
     }
 
     /**
@@ -126,7 +133,7 @@ class GroupTest extends \PHPUnit_Framework_TestCase {
      * Implement test__toString().
      */
     public function test__toString() {
-        $this->assertEquals("1-Group1", $this->group->__toString);
+        $this->assertEquals("-Group1", $this->group->__toString());
     }
 
 }
