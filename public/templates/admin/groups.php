@@ -42,12 +42,6 @@ $groups = $groupRepository->findAll();
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">ID usuario</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID">
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <div class="col-md-3 control-label">
                                         <button type="submit" class="btn red-flamingo-stripe">Crear</button>
                                     </div>
