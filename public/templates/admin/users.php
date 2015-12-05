@@ -220,7 +220,7 @@ $users = $userRepository->findAll();
                     <div class="modal-content">
                         <div class="modal-header bg-grey-gallery">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                            <h4 class="modal-title">Modificar grupo</h4>
+                            <h4 class="modal-title">Modificar usuario</h4>
                         </div>
                         <form class="form-horizontal" role="form" action="../../crud/updateUser.php" method="POST">
                             <div class="modal-body">

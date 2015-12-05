@@ -131,7 +131,7 @@ $reservations = $reservationRepository->findAll();
                     <div class="modal-content">
                         <div class="modal-header bg-grey-gallery">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                            <h4 class="modal-title">Modificar grupo</h4>
+                            <h4 class="modal-title">Modificar reserva</h4>
                         </div>
                         <form class="form-horizontal" role="form" action="../../crud/updateReservation.php" method="POST">
                             <div class="modal-body">
