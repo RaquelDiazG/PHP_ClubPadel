@@ -36,7 +36,7 @@ $courts = $courtRepository->findAll();
                                         <div class="checkbox-list">
                                             <label class="checkbox-inline">
                                                 <div class="checker">
-                                                    <span><input type="checkbox" name="disponible" value="1"></span>
+                                                    <span><input type="checkbox" name="disponible" value="1" required></span>
                                                 </div>
                                                 Sí
                                             </label>

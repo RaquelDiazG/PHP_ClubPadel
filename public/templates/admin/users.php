@@ -32,31 +32,31 @@ $users = $userRepository->findAll();
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Nombre</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="Nombre de usuario" name="username">
+                                        <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Email</label>
                                     <div class="col-md-9">
-                                        <input type="email" class="form-control" placeholder="Email" name="email">
+                                        <input type="email" class="form-control" placeholder="Email" name="email" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Contraseña</label>
                                     <div class="col-md-9">
-                                        <input type="password" class="form-control" placeholder="Contraseña" name="password">
+                                        <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Roles</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles">
+                                        <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">ID grupo</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="ID del grupo" name="groupID">
+                                        <input type="text" class="form-control" placeholder="ID del grupo" name="groupID" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -229,31 +229,31 @@ $users = $userRepository->findAll();
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Nombre</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" value="<?php echo $user->getUsername(); ?>">
+                                            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" value="<?php echo $user->getUsername(); ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Email</label>
                                         <div class="col-md-9">
-                                            <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo $user->getEmail(); ?>">
+                                            <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo $user->getEmail(); ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Contraseña</label>
                                         <div class="col-md-9">
-                                            <input type="password" class="form-control" placeholder="Contraseña" name="password" value="<?php echo $user->getPassword(); ?>">
+                                            <input type="password" class="form-control" placeholder="Contraseña" name="password" value="<?php echo $user->getPassword(); ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Roles</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles" value="<?php echo implode(", ", $user->getRoles()); ?>">
+                                            <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles" value="<?php echo implode(", ", $user->getRoles()); ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">ID grupo</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" placeholder="ID del grupo" name="groupID"value="<?php echo implode(", ", $user->getGroup()->getValues()); ?>">
+                                            <input type="text" class="form-control" placeholder="ID del grupo" name="groupID"value="<?php echo implode(", ", $user->getGroup()->getValues()); ?>" required>
                                         </div>
                                     </div>
                                 </div>

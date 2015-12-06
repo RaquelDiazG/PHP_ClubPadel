@@ -32,13 +32,13 @@ $groups = $groupRepository->findAll();
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Nombre</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                                        <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Roles</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles">
+                                        <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -135,19 +135,13 @@ $groups = $groupRepository->findAll();
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Nombre</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $group->getName(); ?>">
+                                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $group->getName(); ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Roles</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles" value="<?php echo implode(", ", $group->getRoles()); ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">ID usuario</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID" value="<?php echo implode(", ", $group->getUser()->getValues()); ?>">
+                                            <input type="text" class="form-control" placeholder="Roles ej.) rol1 rol2 rol3 ..." name="roles" value="<?php echo implode(", ", $group->getRoles()); ?>" required>
                                         </div>
                                     </div>
                                 </div>

@@ -32,19 +32,19 @@ $reservations = $reservationRepository->findAll();
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Fecha y hora</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control form-control-inline date form_datetime" size="16" placeholder="Fecha y hora" name="datetime" id="datetime">
+                                        <input type="text" class="form-control form-control-inline date form_datetime" size="16" placeholder="Fecha y hora" name="datetime" id="datetime" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">ID pista</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="ID de la pista" name="pistaID">
+                                        <input type="text" class="form-control" placeholder="ID de la pista" name="pistaID" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">ID usuario</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID">
+                                        <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -140,19 +140,19 @@ $reservations = $reservationRepository->findAll();
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Fecha y hora</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control form-control-inline date form_datetime" size="16" value="<?php $reservation->getDatetime()->format('d-m-Y H:i:s'); ?>" name="datetime" id="datetime">
+                                            <input type="text" class="form-control form-control-inline date form_datetime" size="16" value="<?php $reservation->getDatetime()->format('d-m-Y H:i:s'); ?>" name="datetime" id="datetime" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">ID pista</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" placeholder="ID de la pista" name="pistaID" value="<?php echo $reservation->getCourt(); ?>">
+                                            <input type="text" class="form-control" placeholder="ID de la pista" name="pistaID" value="<?php echo $reservation->getCourt(); ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">ID usuario</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID" value="<?php echo $reservation->getUser(); ?>">
+                                            <input type="text" class="form-control" placeholder="ID del usuario" name="usuarioID" value="<?php echo $reservation->getUser(); ?>" required>
                                         </div>
                                     </div>
                                 </div>
