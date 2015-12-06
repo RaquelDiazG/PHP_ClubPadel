@@ -15,7 +15,7 @@ $court = $courtRepository->find(intval($id));
 //Update court (object)
 $court->setActive($disponible);
 
-//Update to BBDD
+//Update court in BBDD
 $entityManager->flush();
 
 //Redirect

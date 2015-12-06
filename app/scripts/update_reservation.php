@@ -26,5 +26,5 @@ $user = $usersRepository->find(intval($argv[4]));
 //Add user to reservation (many to one)
 $reservation->setUser($user);
 
-//Update to BBDD
+//Update reservation to BBDD
 $entityManager->flush();

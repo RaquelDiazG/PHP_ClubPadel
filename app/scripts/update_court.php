@@ -16,5 +16,5 @@ $court = $courtRepository->find(intval($argv[1]));
 //Update court (object)
 $court->setActive($argv[2]);
 
-//Update to BBDD
+//Update court to BBDD
 $entityManager->flush();

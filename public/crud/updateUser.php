@@ -29,6 +29,9 @@ $group = $groupsRepository->find(intval($groupID));
 //Add user to group (many to many)
 $user->addGroup($group);
 
+//Update user in BBDD
+$entityManager->flush();
+
 //Redirect
 header('Location: ../templates/admin/users.php');
 

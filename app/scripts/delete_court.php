@@ -13,6 +13,6 @@ $entityManager = GetEntityManager();
 $courtRepository = $entityManager->getRepository('AppBundle\Entity\Court');
 $court = $courtRepository->find(intval($argv[1]));
 
-//Remove from BBDD
+//Remove court from BBDD
 $entityManager->remove($court);
 $entityManager->flush();

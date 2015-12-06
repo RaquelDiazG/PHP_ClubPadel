@@ -26,5 +26,5 @@ $group = $groupsRepository->find(intval($argv[6]));
 //Add user to group (many to many)
 $user->addGroup($group);
 
-//Update to BBDD
+//Update user to BBDD
 $entityManager->flush();

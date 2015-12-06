@@ -1,7 +1,5 @@
 <?php
 
-// app/Entity/Court.php
-
 namespace AppBundle\Entity;
 
 /**

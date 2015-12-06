@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../config/bootstrap.php';
 
 use AppBundle\Entity\Court;
 
-$disponible = $_POST['disponible'];
+$disponible = isset($_POST['disponible']) ? $_POST['disponible'] : false;
 
 //Create court
 $court = new Court($disponible);

@@ -13,6 +13,6 @@ $entityManager = GetEntityManager();
 $userRepository = $entityManager->getRepository('AppBundle\Entity\User');
 $user = $userRepository->find(intval($argv[1]));
 
-//Remove from BBDD
+//Remove user from BBDD
 $entityManager->remove($user);
 $entityManager->flush();

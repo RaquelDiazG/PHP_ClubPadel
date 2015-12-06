@@ -22,7 +22,7 @@ $user = $usersRepository->find(intval($usuarioID));
 //Add user to reservation (many to one)
 $reservation->setUser($user);
 
-//Add user to BBDD
+//Add reservation to BBDD
 $entityManager->persist($reservation);
 $entityManager->flush();
 

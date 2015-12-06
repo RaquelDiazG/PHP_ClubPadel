@@ -13,6 +13,6 @@ $entityManager = GetEntityManager();
 $reservationRepository = $entityManager->getRepository('AppBundle\Entity\Reservation');
 $reservation = $reservationRepository->find(intval($argv[1]));
 
-//Remove from BBDD
+//Remove reservation from BBDD
 $entityManager->remove($reservation);
 $entityManager->flush();

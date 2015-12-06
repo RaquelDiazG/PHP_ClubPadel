@@ -13,6 +13,6 @@ $entityManager = GetEntityManager();
 $groupRepository = $entityManager->getRepository('AppBundle\Entity\Group');
 $group = $groupRepository->find(intval($argv[1]));
 
-//Remove from BBDD
+//Remove group from BBDD
 $entityManager->remove($group);
 $entityManager->flush();
